@@ -1,0 +1,7 @@
+node_modules
+build
+.npm
+.config
+.bash_history
+.solhint.json
+.node-gyp
