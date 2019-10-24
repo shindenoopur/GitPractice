@@ -1,0 +1,15 @@
+SELECT a.agreement_id AgreementID, 
+cd.guarantor Guarantor, cd.beneficiary Beneficiary, cd.amount CollateralAmount, cd.date DateCreated,
+eb.event Description, eb.block_number BlockNumber
+FROM 
+agreements a,
+collateral_details cd,
+event_block eb  
+WHERE  
+a.agreement_id = cd.agreement_id  
+AND  
+cd.log_index = eb.log_index
+AND
+eb.invoked_by = '0x0297518971dcc006437c68d594f904e8a10c9498'
+AND  
+cd.agreement_id = '0x0bc9cc0a068b2c59d908476416f85a71f6876b2b122206a29706628e0d1f8655'

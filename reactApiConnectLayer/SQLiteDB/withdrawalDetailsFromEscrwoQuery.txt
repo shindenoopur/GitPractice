@@ -1,0 +1,14 @@
+SELECT DISTINCT
+wd.withdrawer Withdrawer, wd.amount WithdrawalAmount, wd.date WithdrawalDate, 
+eb.block_hash BlockHash, eb.block_number BlockNumber, eb.event Event, eb.log_index LogIndex, eb.transaction_index TransactionIndex,
+eb.transaction_hash TransactionHash
+FROM
+withdrawal_details wd, event_block eb
+WHERE
+wd.block_hash = eb.block_hash
+AND
+wd.escrow_contract = eb.invoked_by
+AND
+wd.log_index = eb.log_index
+AND
+wd.escrow_contract = '0x0de11890d028a1fe1c68f9fc36146488034ba0e0'

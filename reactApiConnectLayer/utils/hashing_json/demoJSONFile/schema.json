@@ -1,0 +1,33 @@
+{
+  "TestSchema": {
+    "title": "Asset Metadata",
+    "author":"Balaji Pachai",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description":"A portrait of Mona Lisa"
+      },
+      "description": {
+        "type": "string",
+        "description": "Mona Lisa, also known as La Gioconda, is the wife of Francesco del Giocondo. This painting is painted as oil on wood. The original painting size is 77 x 53 cm (30 x 20 7/8 in) and is owned by by the Government of France and is on the wall in the Louvre in Paris, France."
+      },
+      "image": {
+        "type":"string",
+        "description": "c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+      }
+    }
+  },
+  "User1": {
+    "name": "Chaitanya Amin",
+    "income": "2500$"
+  },
+  "User2": {
+    "name": "Jason Roy",
+    "income": "2000$"
+  },
+  "User3": {
+    "name": "John Doe",
+    "income": "1500$"
+  }
+}

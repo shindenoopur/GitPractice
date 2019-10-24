@@ -1,0 +1,12 @@
+SELECT
+dd.depositor Depositor, dd.amount DepositedAmount, dd.date DepositedDate, 
+eb.block_hash BlockHash, eb.block_number BlockNumber, eb.event Event, eb.log_index LogIndex, eb.transaction_index TransactionIndex,
+eb.transaction_hash TransactionHash
+FROM
+deposit_details dd, event_block eb
+WHERE
+dd.block_hash = eb.block_hash
+AND
+dd.escrow_contract = eb.invoked_by
+AND
+dd.escrow_contract = '0xd49d5e8db51fb6efe69fcca3e1237924e004a679'

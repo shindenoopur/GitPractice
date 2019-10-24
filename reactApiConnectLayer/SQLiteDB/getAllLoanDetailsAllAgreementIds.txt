@@ -1,0 +1,12 @@
+SELECT
+a.agreement_id AgreementID, a.lender Lender, a.borrower Borrower, a.date_created DateCreated,
+dt.principal_amount PrincipalAmount, dt.interest_rate InterestRate,
+do.principal_token PrincipalToken, do.underwriter Underwriter, do.underwriter_fee UnderwriterFee,
+do.relayer Relayer, do.relayer_fee RelayerFee
+FROM
+agreements a, debt_order do, debt_terms dt
+WHERE
+a.agreement_id = do.agreement_id
+AND
+a.agreement_id = dt.agreement_id
+

@@ -1,0 +1,4 @@
+SELECT
+a.id ID, a.agreement_id AgreementID, a.lender Lender, a.borrower Borrower, a.date_created DateCreated
+FROM 
+agreements a

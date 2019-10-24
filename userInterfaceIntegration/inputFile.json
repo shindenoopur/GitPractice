@@ -1,0 +1,64 @@
+{
+  "ganache": {
+    "signUp": {
+      "userDetails": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "dob": "01/06/1960",
+        "email": "john.doe@yahoo.com",
+        "address": "London"
+      },
+      "debtor": "The Borrower Contract address"
+    },
+    "addCard": {
+      "borrowableAmount": 1500,
+      "email": "john.doe@yahoo.com"
+    },
+    "makeLoan": {
+      "email": "john.doe@yahoo.com",
+      "principalAmount": 100,
+      "interestRate": 10,
+      "numberOfDays": 30
+    },
+    "getDebtDetails": {
+      "email": "john.doe@yahoo.com",
+      "whichDetails": "can be either of emi, expectedRepaymentValue, valueRepaidTillNow, debtStartTimestamp, debtEndTimestamp, myLoans, repaymentDetails"
+    },
+    "repayLoan": {
+      "email": "john.doe@yahoo.com",
+      "amount": 50,
+      "debtAgreement": "The debt agreement against which repayment has to be made"
+    }
+  },
+  "goerli": {
+    "signUp": {
+      "userDetails": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "dob": "01/06/1960",
+        "email": "john.doe@yahoo.com",
+        "address": "London"
+      },
+      "debtor": "The Borrower Contract address"
+    },
+    "addCard": {
+      "borrowableAmount": 1500,
+      "email": "john.doe@yahoo.com"
+    },
+    "makeLoan": {
+      "email": "john.doe@yahoo.com",
+      "principalAmount": 100,
+      "interestRate": 10,
+      "numberOfDays": 30
+    },
+    "getDebtDetails": {
+      "email": "john.doe@yahoo.com",
+      "whichDetails": "can be either of emi, expectedRepaymentValue, valueRepaidTillNow, debtStartTimestamp, debtEndTimestamp, myLoans, repaymentDetails"
+    },
+    "repayLoan": {
+      "email": "john.doe@yahoo.com",
+      "amount": 50,
+      "debtAgreement": "The debt agreement against which repayment has to be made"
+    }
+  }
+}

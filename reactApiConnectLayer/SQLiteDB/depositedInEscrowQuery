@@ -1,0 +1,3 @@
+SELECT SUM(amount) DepositedInEscrow
+FROM deposit_details 
+WHERE escrow_contract = '0x2f766de302ded1fd3be01a081a564011132e596d'

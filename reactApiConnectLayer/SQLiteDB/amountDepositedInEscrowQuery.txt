@@ -1,0 +1,4 @@
+SELECT
+SUM(dd.amount) DepositedAmount
+FROM
+deposit_details dd

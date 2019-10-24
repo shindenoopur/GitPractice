@@ -1,0 +1,93 @@
+SELECT
+	a.agreement_id AgreementID, a.date_created DateCreated,
+	dd.amount Amount, dd.date TransactionDate,
+	eb.event Description, eb.block_number BlockNumber,
+	eb.transaction_index TransactionIndex, eb.log_index LogIndex
+	FROM
+	agreements a,
+	deposit_details dd,
+	event_block eb
+	WHERE
+	a.lender = dd.escrow_contract
+	AND
+	dd.block_hash = eb.block_hash
+	AND
+	dd.log_index = eb.log_index
+	AND
+	a.lender = '0x0fc68b31a555f609991c7187a04b5a7b0b07d46c' COLLATE NOCASE
+	
+	UNION
+
+SELECT 
+	rd.agreement_id AgreementID, rd.repayment_date DateCreated,  
+	rd.repaid_value RepaidValue, rd.repayment_date DateCreated, 
+	eb.event Description, eb.block_number BlockNumber,  
+	eb.transaction_index TransactionIndex , eb.log_index 
+	FROM  
+	repayment_details rd, 
+	event_block eb 
+	WHERE  
+	rd.agreement_id = '0xfa7c788aa89fdea5fdb80f3f0f696b00a57378b6b987f7451be2ff98ac6b6ba5' COLLATE NOCASE   
+	AND 
+	beneficiary = '0x0fc68b31a555f609991c7187a04b5a7b0b07d46c' COLLATE NOCASE   
+	AND 
+	eb.block_hash = rd.block_hash 
+	UNION   
+        SELECT 
+            a.agreement_id AgreementID, a.date_created DateCreated, 
+            wd.amount WithdrawalAmount, wd.date WithdrawalDate, 
+            eb.event Description, eb.block_number BlockNumber, 
+            eb.transaction_index TransactionIndex , eb.log_index 
+            FROM 
+            agreements a, 
+            withdrawal_details wd, 
+            event_block eb 
+            WHERE 
+            a.lender = wd.escrow_contract 
+            AND 
+            wd.block_hash = eb.block_hash 
+            AND 
+            wd.log_index = eb.log_index 
+            AND 
+            a.lender = '0x0fc68b31a555f609991c7187a04b5a7b0b07d46c' COLLATE NOCASE   
+        UNION 
+        SELECT   
+            a.agreement_id AgreementID, cd.date DateCreated, 
+            cd.amount CollateralAmount, cd.date DateCreated,   
+            eb.event Description, eb.block_number BlockNumber,  
+	        eb.transaction_index TransactionIndex , eb.log_index 
+            FROM   
+            agreements a,   
+            collateral_details cd,   
+            event_block eb   
+            WHERE   
+            a.agreement_id = cd.agreement_id   
+            AND   
+            cd.log_index = eb.log_index   
+            AND   
+            eb.invoked_by = '0x0fc68b31a555f609991c7187a04b5a7b0b07d46c' COLLATE NOCASE   
+            AND   
+            cd.agreement_id = '0xfa7c788aa89fdea5fdb80f3f0f696b00a57378b6b987f7451be2ff98ac6b6ba5' COLLATE NOCASE 
+         UNION 
+         SELECT  
+            a.agreement_id AgreementID, a.date_created DateCreated,  
+            dt.principal_amount PrincipalAmount, a.date_created DateCreated, 
+            eb.event Description, eb.block_number BlockNumber,  
+            eb.transaction_index TransactionIndex, eb.log_index 
+            FROM  
+            agreements a, 
+            debt_terms dt, 
+            event_block eb 
+            WHERE  
+            a.agreement_id = dt.agreement_id  
+	        AND 
+	        a.block_hash = eb.block_hash 
+	        AND 
+	        dt.block_hash = eb.block_hash 
+	        AND 
+	        a.log_index = eb.log_index 
+            AND  
+            a.agreement_id = '0xfa7c788aa89fdea5fdb80f3f0f696b00a57378b6b987f7451be2ff98ac6b6ba5' COLLATE NOCASE  
+            AND  
+            dt.agreement_id = '0xfa7c788aa89fdea5fdb80f3f0f696b00a57378b6b987f7451be2ff98ac6b6ba5' COLLATE NOCASE 
+Order by dd.date, rd.repayment_date, wd.date, cd.date, a.date_created, eb.block_number, eb.transaction_index asc

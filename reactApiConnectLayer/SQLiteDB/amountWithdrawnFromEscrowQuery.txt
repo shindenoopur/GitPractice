@@ -1,0 +1,6 @@
+SELECT
+SUM(wd.amount) WithdrawalAmount
+FROM
+withdrawal_details wd
+WHERE
+wd.escrow_contract = '0xd49d5e8db51fb6efe69fcca3e1237924e004a679'

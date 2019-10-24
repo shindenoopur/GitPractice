@@ -1,0 +1,189 @@
+{
+  "deploymentValues" : {
+    "multiSigWalletNumAuthorizationRequired": 3,
+    "escrowFixedDepositAmount": 10000
+  },
+
+  "seizeCollateral": {
+    "underwriterFee": 10,
+    "relayerFee" : 10,
+    "creditorFee": 10,
+    "debtorFee": 10,
+    "underwriterRiskRating": 100,
+    "salt": 40,
+
+    "principalAmount": 1800,
+    "interestRate" : 20,
+    "amortizationUnit": 1,
+    "termLength": 100,
+    "collateralAmount": 1800,
+    "gracePeriodInDays": 2,
+
+    "transferToCreditor": 10000,
+    "eachDepositorsDeposit": 500
+  },
+
+  "returnCollateral": {
+    "underwriterFee": 50,
+    "relayerFee" : 50,
+    "creditorFee": 50,
+    "debtorFee": 50,
+    "underwriterRiskRating": 1000,
+    "salt": 70,
+
+    "principalAmount": 1500,
+    "interestRate" : 10,
+    "amortizationUnit": 1,
+    "termLength": 100,
+    "collateralAmount": 1500,
+    "gracePeriodInDays": 30,
+
+    "transferToCreditor": 10000,
+    "eachDepositorsDeposit": 500
+  },
+
+  "seizeAndThenReturnCollateral": {
+    "underwriterFee": 30,
+    "relayerFee" : 30,
+    "creditorFee": 30,
+    "debtorFee": 30,
+    "underwriterRiskRating": 1000,
+    "salt": 77,
+
+    "principalAmount": 1600,
+    "interestRate" : 10,
+    "amortizationUnit": 1,
+    "termLength": 100,
+    "collateralAmount": 1600,
+    "gracePeriodInDays": 30,
+
+    "transferToCreditor": 10000,
+    "eachDepositorsDeposit": 500
+  },
+
+  "escrowTestCases": {
+    "underwriterFee": 10,
+    "relayerFee" : 10,
+    "creditorFee": 10,
+    "debtorFee": 10,
+    "underwriterRiskRating": 100,
+    "salt": 25,
+
+    "principalAmount": 1950,
+    "interestRate" : 10,
+    "amortizationUnit": 1,
+    "termLength": 100,
+    "collateralAmount": 1950,
+    "gracePeriodInDays": 30,
+    "noOfDays": 90,
+
+    "transferToDebtor": 2000,
+    "approvalFromDebtor": 2000,
+    "approvalFromCreditor": 2000,
+
+    "transferToDepositors": 1000,
+    "individualDeposits": 500,
+    "approvalFromDepositors": 1000,
+    "borrowableAmount": 2000
+  },
+
+  "paidPrincipalAndInterest": {
+    "underwriterFee": 0,
+    "relayerFee" : 0,
+    "creditorFee": 0,
+    "debtorFee": 0,
+    "underwriterRiskRating": 100,
+    "salt": 40,
+
+    "principalAmount": 2000,
+    "interestRate" : 10,
+    "amortizationUnit": 1,
+    "termLength": 100,
+    "collateralAmount": 2000,
+    "gracePeriodInDays": 30,
+
+    "transferToCreditor": 10000,
+    "eachDepositorsDeposit": 500
+  },
+
+  "paidPrincipalNotInterest": {
+    "underwriterFee": 1,
+    "relayerFee" : 1,
+    "creditorFee": 1,
+    "debtorFee": 1,
+    "underwriterRiskRating": 100,
+    "salt": 40,
+
+    "principalAmount": 1996,
+    "interestRate" : 10,
+    "amortizationUnit": 1,
+    "termLength": 100,
+    "collateralAmount": 1996,
+    "gracePeriodInDays": 30,
+
+    "transferToCreditor": 1000,
+    "eachDepositorsDeposit": 500
+  },
+
+  "paidInterestNotPrincipal": {
+    "underwriterFee": 10,
+    "relayerFee" : 10,
+    "creditorFee": 10,
+    "debtorFee": 10,
+    "underwriterRiskRating": 100,
+    "salt": 40,
+
+    "principalAmount": 1950,
+    "interestRate" : 10,
+    "amortizationUnit": 1,
+    "termLength": 100,
+    "collateralAmount": 1950,
+    "gracePeriodInDays": 30,
+
+    "transferToCreditor": 1000,
+    "eachDepositorsDeposit": 500
+  },
+
+  "karmaDebt": {
+    "underwriterFee": 0,
+    "relayerFee" : 0,
+    "creditorFee": 0,
+    "debtorFee": 0,
+    "underwriterRiskRating": 100,
+    "salt": 40,
+
+    "principalAmount": 300,
+    "interestRate" : 10,
+    "amortizationUnit": 1,
+    "termLength": 100,
+    "collateralAmount": 300,
+    "gracePeriodInDays": 30,
+
+    "transferToCreditor": 1000,
+    "eachDepositorsDeposit": 500
+  },
+
+  "karmaDebt1": {
+    "underwriterFee": 0,
+    "relayerFee" : 0,
+    "creditorFee": 0,
+    "debtorFee": 0,
+    "underwriterRiskRating": 1000,
+    "salt": 400,
+
+    "principalAmount": 500,
+    "interestRate" : 20,
+    "amortizationUnit":2,
+    "termLength": 300,
+    "collateralAmount": 500,
+    "gracePeriodInDays": 60,
+
+    "transferToCreditor": 2000,
+    "eachDepositorsDeposit": 500
+  },
+  "SECONDS_IN_DAY": 86400,
+  "NO_OF_DAYS": 90,
+  "FAST_FORWARD_BY_DAYS": 80,
+  "denomination": "$"
+}
+
